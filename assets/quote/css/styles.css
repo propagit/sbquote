@@ -1,0 +1,142 @@
+/* CSS Document */
+
+html,
+body{
+	background-image:url(../img/bg-body.jpg);
+	background-repeat:repeat;	
+}
+
+html,
+body,h1,h2,h3,h4,h5,input,select,button,p{
+	font-family: 'Lato', sans-serif;	
+	font-size:20px;
+}
+
+
+
+h1{
+	font-size:30px;
+	font-weight:700;
+}
+h2{
+	font-size:30px;
+	font-weight:900;	
+}
+
+#header-wrap{
+	text-align:center;
+}
+#header-wrap h2{
+	padding:0;
+	margin:0;
+}
+.box{
+	-webkit-box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.2);
+	border-bottom:2px solid #fff;
+	text-align:center;
+}
+.box:after{
+	content:" " ; 
+	background-image:url(../img/angle-down.png);
+	background-repeat:no-repeat;
+	width:33px;
+	height:20px;
+	position:absolute;
+	margin-top:2px;
+	margin-bottom:20px;
+}
+.box > .container{
+	padding-top:35px;
+	padding-bottom:10px;
+}
+.lastbox{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-bottom:none;
+}
+.lastbox:after{
+	content:"";	
+	background-image:none;
+}
+
+.icon-bg{
+	background-image: url(../img/CircleLarge.png);
+	height: 75px;
+	width: 75px;
+	line-height: 75px;
+	text-align: center;
+	display:inline-block;
+	float:left;	
+}
+.icon-bg .fa{
+	color: #00adef;
+	font-size: 36px;
+	line-height: 75px;
+}
+.icon-bg .minus-2x{
+	font-size: 24px;
+	padding: 0 3px;
+}
+.box h1{
+	font-size: 30px;
+	font-weight: 300;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	line-height: 75px;
+}
+span.imp,
+.box h1 > span{
+	font-weight:700;
+	text-decoration:underline;	
+}
+.block{
+	margin-top:20px;
+	margin-bottom:30px;	
+}
+.block > span{
+	display:block;
+}
+.block > .btn-group{
+	margin-top:20px;
+}
+.block > .btn-group .btn{
+	padding: 8px 14px;
+	font-size: 18px;	
+}
+.block .form-group{
+	margin-bottom:20px;	
+}
+.block .form-control{
+	padding: 12px 12px;
+	height: 48px;
+	border-width: 2px;
+	font-size:18px;
+	font-weight:300;
+	text-align:center;
+}
+.btn-large{
+	width:100%;	
+	padding: 8px 14px;
+	font-size: 18px;	
+}
+/* helpers */
+.vgap{
+	margin-top:20px !important;	
+}
+.center{
+	float:none;
+	margin:auto auto;	
+}
+.center-text{
+	text-align:center;	
+}
+.clear{
+	clear:both;	
+}
+.display-block{
+	display:block;	
+}
