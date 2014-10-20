@@ -56,7 +56,9 @@ if ($handle)
 
 $route['default_controller'] = "dispatcher";
 
-
+$route['quote'] = 'dispatcher/quote_dispacher/$1';
+$route['quote/(:any)'] = 'dispatcher/quote_dispacher/$1/$2';
+$route['quote/(:any)/(:any)'] = 'dispatcher/quote_dispacher/$1/$2/$3';
 
 
 

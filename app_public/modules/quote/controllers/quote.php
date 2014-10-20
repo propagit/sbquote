@@ -11,6 +11,9 @@ class Quote extends MX_Controller {
 	{
 		switch($method)
 		{
+			case 'result':
+				$this->result();
+			break;
 
 			default:
 				$this->main_view();
@@ -21,6 +24,11 @@ class Quote extends MX_Controller {
 	function main_view()
 	{
 		$this->load->view('main_view', isset($data) ? $data : NULL);
+	}
+	
+	function result()
+	{
+		$this->load->view('result', isset($data) ? $data : NULL);	
 	}
 	
 	
