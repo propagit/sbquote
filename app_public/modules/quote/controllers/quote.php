@@ -14,10 +14,9 @@ class Quote extends MX_Controller {
 			case 'result':
 				$this->result();
 			break;
-
 			default:
 				$this->main_view();
-				break;
+			break;
 		}
 	}
 	
@@ -28,8 +27,13 @@ class Quote extends MX_Controller {
 	
 	function result()
 	{
-		$this->load->view('result', isset($data) ? $data : NULL);	
+		$data['price'] = number_format(72,2);
+		$data['input'] = array('name' => 'James Blunfield' , 'phone' => '0421-333-367', 'email' => 'james@example.com');
+		$data['quote_id'] = time();
+	
+		$this->load->view('quote_result_template', isset($data) ? $data : NULL);	
 	}
+	
 	
 	
 }

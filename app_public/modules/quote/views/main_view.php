@@ -24,7 +24,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 block">
         	<span>Roster & Payroll</span>
-            <div class="btn-group radio-btn group1" data-package="both">
+            <div class="btn-group radio-btn group1" data-package="both" id="default-radio">
               <button type="button" class="btn btn-default btn-success yes">Yes</button>
               <button type="button" class="btn btn-default no">No</button>
             </div> 
@@ -44,7 +44,7 @@
         <div class="clear"></div>
         <div class="col-xs-12 block">
         	<span>You do your roster & we do your pay run</span>
-            <div class="btn-group switch combo">
+            <div class="btn-group switch combo" id="default-switch">
               <button type="button" class="btn btn-default btn-success yes">Yes</button>
               <button type="button" class="btn btn-default no">No</button>
             </div> 
@@ -70,10 +70,10 @@
         <div class="clear"></div>
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 block center vgap">
             <div class="form-group">
-              <input name="avg_staff" type="text" class="form-control" placeholder="Enter The Average Number Of Staff Per Organisation">
+              <input id="avg-staff" name="avg_staff" type="text" class="form-control" placeholder="Enter The Average Number Of Staff Per Organisation">
             </div>
             <div class="form-group">
-              <input name="no_of_sites" type="text" class="form-control" placeholder="Enter The Number Of Sites">
+              <input id="no-of-sites" name="no_of_sites" type="text" class="form-control" placeholder="Enter The Number Of Sites">
             </div>
         </div>
     </div>
@@ -96,13 +96,13 @@
         <div class="clear"></div>
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 block center vgap">
             <div class="form-group">
-              <input name="name" type="text" class="form-control" placeholder="Your Name">
+              <input id="name" name="name" type="text" class="form-control" placeholder="Your Name">
             </div>
             <div class="form-group">
-              <input name="phone" type="text" class="form-control" placeholder="Your Phone Number">
+              <input id="phone" name="phone" type="text" class="form-control" placeholder="Your Phone Number">
             </div>
             <div class="form-group">
-              <input name="email" type="text" class="form-control" placeholder="Your Email">
+              <input id="email" name="email" type="text" class="form-control" placeholder="Your Email">
             </div>
             <div class="form-group">
               <button type="button" class="btn btn-info btn-large" id="get-quote">GET QUOTE</button>
@@ -116,10 +116,24 @@
 </form>
 
 
-<div class="quote-result">
-
+<div id="quote-result" class="hide">
+    <div class="box lastbox">
+        <div class="container">
+            <div class="col-xs-12 center">
+                 <h1>Thank Your For Your Interest</h1>
+                 <p>The Below Quote Has Been Emailed To You<br><br></p>
+            </div>
+            <div class="clear"></div>
+            <div class="inner-box table-responsive" id="quote">
+                
+            </div>
+            <div class="form-group" style="margin-top:40px;">
+              <button type="button" class="btn btn-info btn-large" id="get-another-quote">GET ANOTHER QUOTE</button>
+            </div>
+        </div>
+    </div>
 </div>
-
+<div class="overlay"></div>
 <script>
 
 $(function(){
@@ -133,9 +147,25 @@ $(function(){
 	});
 	
 	$('#get-quote').click(function(){
-		get_quote();
+		if(validate()){
+			get_quote();	
+		}
+	});
+	
+	$('#get-another-quote').click(function(){
+		reset_form();
+		$('html, body').animate({ scrollTop: 0 }, 500);
 	});
 });
+
+function reset_form(){
+	$('#quote-form')[0].reset();
+	$('#quote-result').addClass('hide');
+	$('#quote').html('');
+	toggle_radio($('#default-radio'),'group1');
+	$('#default-switch .yes').addClass('btn-success');
+	$('#default-switch .no').removeClass('btn-danger');
+}
 
 function toggle_radio(obj,group){
 	var $this = obj;
@@ -177,18 +207,70 @@ function toggle_single_switch(obj){
 }
 
 function get_quote(){
+	loading();
 	$.ajax({
 		url:"<?=base_url();?>quote/ajax/get_quote",
 		type:"POST",
 		data:$('#quote-form').serialize(),
 		success:function(html){
-			$('#quote-result').html(html);
-			$('#quote-result-modal').modal('show');
+			remove_loading();
+			$('#quote').html(html);
+			$('#quote-result').removeClass('hide');
+			$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 		}
 	});
 		
 }
 
+function validate(){
+	var 	avg_staff = $('#avg-staff');
+	var sites = $('#no-of-sites');
+	var 	name = $('#name');
+	var 	email = $('#email');
+	var 	phone = $('#phone');
+	var valid = true;
+	
+	$('#quote-form input').parent().removeClass('has-error');
+	
+	if(!avg_staff.val()){
+		valid = false;
+		avg_staff.parent().addClass('has-error');
+	}
+	
+	if(!sites.val()){
+		valid = false;
+		sites.parent().addClass('has-error');
+	}
+	
+	if(!name.val()){
+		valid = false;
+		name.parent().addClass('has-error');
+	}
+	
+	if(!email.val()){
+		valid = false;
+		email.parent().addClass('has-error');
+	}
+	
+	if(!phone.val()){
+		valid = false;
+		phone.parent().addClass('has-error');
+	}
+	
+	return valid;
+
+}
+
+function loading(){
+	var h = $(document).height();
+	var mt = $(window).scrollTop() + 300;
+	var w = $(document).width();
+	$('body').append('<div id="loading" style="height:' + h + 'px;width:' + w + 'px;line-height:' + h + 'px;"><div style="margin-top:'+mt+'px" class="loading-inner-box"><i class="fa fa-spinner fa-spin"></i></div></div>');
+}
+
+function remove_loading(){
+	$('#loading').remove();
+}
 
 
 </script>

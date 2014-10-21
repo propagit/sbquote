@@ -10,9 +10,13 @@ class Ajax extends MX_Controller {
 	function get_quote()
 	{
 		$input = $this->input->post();
+		
+		# default values
 		$cost = 4;
 		$no_of_site = 1;
+		
 		$avg_staff = $input['avg_staff'];
+
 		
 		switch($input['you_package']){
 			case 'roster-only':
@@ -48,8 +52,32 @@ class Ajax extends MX_Controller {
 		
 		# get final price
 		$final_price = $price - $discount;
-		echo '$'.number_format($final_price,2);
-			
+		$data['price'] = number_format($final_price,2);
+		$data['input'] = $input;
+		$data['quote_id'] = time();
+		
+		# html for web
+		$quote = $this->load->view('quote_result',isset($data) ? $data : NULL,true);
+		
+		#html for email
+		$email_msg = $this->load->view('email_quote',isset($data) ? $data : NULL,true);
+		
+		# send email
+		$email_data = array(
+					'to' => $input['email'],
+					#'to' => 'kaushtuv@propagate.com.au',
+					'bcc' => 'team@propagate.com.au',
+					'from' => 'quote@staffbooks.system',
+					'from_text' => 'StaffBooks | ShoeBooks - smarter roster to payroll',
+					'subject' => 'StaffBooks | ShoeBooks - Quote ' . $data['quote_id'],
+					'message' => $email_msg
+					);
+		modules::run('email/send_email',$email_data);
+		
+		
+		echo $quote;
 	}
+	
+
 	
 }
