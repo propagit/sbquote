@@ -1,56 +1,31 @@
-<!--you run your payroll-->
+<!--package-->
 <div class="box">
     <div class="container">
-    	<div class="col-xs-12">
-            <div class="col-xs-8 center">
-                <div class="icon-bg"><i class="fa fa-desktop"></i></div>
-                <h1>The Software & <span>You</span> Run Your Payroll</h1>
+    	<div class="col-xs-12 center">
+            <div class="col-xs-6 block">
+                <div class="col-xs-12">
+                	<div class="icon-bg first-bg no-float"><i class="fa fa-desktop"></i></div>
+                </div>
+                <h1 class="alt">The Software & <span>You</span> <br>Run Your Payroll</h1>
+                <div class="btn-group radio-btn group1" data-package="software-only">
+                  <button type="button" class="btn btn-default btn-success yes">Yes</button>
+                  <button type="button" class="btn btn-default no">No</button>
+                </div>
             </div>
-        </div>
-        <div class="clear"></div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 block">
-        	<span>Roster - Time sheets Only</span>
-            <div class="btn-group radio-btn group1" data-package="roster-only">
-              <button type="button" class="btn btn-default yes">Yes</button>
-              <button type="button" class="btn btn-default btn-danger no">No</button>
+            <div class="col-xs-6 block">
+            	<div class="col-xs-12">
+                	<div class="icon-bg no-float"><i class="fa fa-desktop minus-2x"></i><i class="fa fa-refresh minus-2x"></i></div>
+                </div>
+                <h1 class="alt">The Software & <span>We</span> <br>Run Your Payroll</h1>
+                <div class="btn-group radio-btn group1" data-package="sofware-and-payroll">
+                  <button type="button" class="btn btn-default yes">Yes</button>
+                  <button type="button" class="btn btn-default btn-danger no">No</button>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 block">
-        	<span>Payroll Only </span>
-            <div class="btn-group radio-btn group1" data-package="payroll-only">
-              <button type="button" class="btn btn-default yes">Yes</button>
-              <button type="button" class="btn btn-default btn-danger no">No</button>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 block">
-        	<span>Roster & Payroll</span>
-            <div class="btn-group radio-btn group1" data-package="both" id="default-radio">
-              <button type="button" class="btn btn-default btn-success yes">Yes</button>
-              <button type="button" class="btn btn-default no">No</button>
-            </div> 
         </div>
     </div>
-</div><!-- you run your payroll-->
+</div><!-- package-->
 
-<!-- we run your payroll-->
-<div class="box">
-    <div class="container">
-    	<div class="col-xs-12">
-            <div class="col-xs-8 center">
-        		<div class="icon-bg"><i class="fa fa-desktop minus-2x"></i><i class="fa fa-refresh minus-2x"></i></div>
-            	<h1>The Software & <span>We</span> Run Your Payroll</h1>
-            </div>
-        </div>
-        <div class="clear"></div>
-        <div class="col-xs-12 block">
-        	<span>You do your roster & we do your pay run</span>
-            <div class="btn-group switch combo" id="default-switch">
-              <button type="button" class="btn btn-default btn-success yes">Yes</button>
-              <button type="button" class="btn btn-default no">No</button>
-            </div> 
-        </div>
-    </div>
-</div><!-- we run your payroll-->
 
 <form id="quote-form">
 <!-- tells us about your franchise -->
@@ -111,8 +86,7 @@
     </div>
 </div><!-- get a quote  -->
 
-<input type="hidden" id="you-package"  name="you_package" value="both">
-<input type="hidden" id="we-package" name="we_package" value="yes">
+<input type="hidden" id="package"  name="package" value="software-only">
 </form>
 
 
@@ -142,10 +116,6 @@ $(function(){
 		toggle_combo();
 	});
 	
-	$('.switch button').click(function(){
-		toggle_single_switch($(this));
-	});
-	
 	$('#get-quote').click(function(){
 		if(validate()){
 			get_quote();	
@@ -163,8 +133,6 @@ function reset_form(){
 	$('#quote-result').addClass('hide');
 	$('#quote').html('');
 	toggle_radio($('#default-radio'),'group1');
-	$('#default-switch .yes').addClass('btn-success');
-	$('#default-switch .no').removeClass('btn-danger');
 }
 
 function toggle_radio(obj,group){
@@ -174,36 +142,7 @@ function toggle_radio(obj,group){
 	$('.'+group+' .no').addClass('btn-danger');	
 	$($this).children('.yes').addClass('btn-success');
 	$($this).children('.no').removeClass('btn-danger');
-	$('#you-package').val($this.attr('data-package'));
-	
-}
-
-function toggle_combo(){
-	var package = $('#you-package').val();
-	if(package == 'roster-only'){
-		$('.combo').children('.yes').removeClass('btn-success');
-		$('.combo').children('.no').addClass('btn-danger');
-		$('.combo').addClass('btn-disabled');
-		$('#we-package').val('no');
-	}else{
-		$('.combo').removeClass('btn-disabled');	
-	}
-}
-
-function toggle_single_switch(obj){
-	var $this = obj;
-	if($this.parent().hasClass('btn-disabled')){
-		return;	
-	}
-	if($this.hasClass('yes')){
-		$($this).addClass('btn-success');
-		$($this).parent().children('.no').removeClass('btn-danger');	
-		$('#we-package').val('yes');
-	}else{
-		$($this).addClass('btn-danger');
-		$($this).parent().children('.yes').removeClass('btn-success');	
-		$('#we-package').val('no');	
-	}
+	$('#package').val($this.attr('data-package'));	
 }
 
 function get_quote(){

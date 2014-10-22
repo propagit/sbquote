@@ -18,6 +18,12 @@ h1{
 	font-size:30px;
 	font-weight:700;
 }
+h1.alt{
+	line-height: 40px !important;
+	float: left;
+	width: 100%;
+	margin-top:5px !important;
+}
 h2{
 	font-size:30px;
 	font-weight:600;	
@@ -43,14 +49,18 @@ p{
 	text-align:center;
 }
 .box:after{
-	content:" " ; 
-	background-image:url(../img/angle-down.png);
-	background-repeat:no-repeat;
-	width:33px;
-	height:20px;
-	position:absolute;
-	margin-top:2px;
-	margin-bottom:20px;
+	content: " ";
+	background-image: url(../img/arrow.png);
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 43px;
+	position: absolute;
+	margin-top: 0;
+	margin-bottom: 20px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background-position: center center;
 }
 .box > .container{
 	padding-top:35px;
@@ -133,6 +143,7 @@ span.imp,
 	box-shadow:2px 3px 10px rgba(0,0,0,0.2);	
 }
 
+
 @media(max-width:992px){
 	.icon-bg{
 		float:none;	
@@ -177,4 +188,7 @@ span.imp,
 }
 .display-block{
 	display:block;	
+}
+.no-float{
+	float:none;	
 }
