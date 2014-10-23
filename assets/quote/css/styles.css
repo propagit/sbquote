@@ -192,3 +192,15 @@ span.imp,
 .no-float{
 	float:none;	
 }
+.no-gutters{
+	padding-left:0;
+	padding-right:0;	
+}
+
+.row-no-lt-gutter{
+	padding-left:0;
+	margin-left:-15px;	
+}
+.offset-row-lt-gutter{
+	padding-right:15px;	
+}

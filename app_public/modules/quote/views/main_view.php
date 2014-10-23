@@ -2,7 +2,7 @@
 <div class="box">
     <div class="container">
     	<div class="col-xs-12 center">
-            <div class="col-xs-6 block">
+            <div class="col-xs-6 block row-no-lt-gutter offset-row-lt-gutter">
                 <div class="col-xs-12">
                 	<div class="icon-bg first-bg no-float"><i class="fa fa-desktop"></i></div>
                 </div>

@@ -17,13 +17,14 @@
         <tr><td style="border-top:1px dotted #ccc;">&nbsp;</td></tr>
         <tr>
             <td style="color:#00a2e0">
-                <span style="font-size: 170px;font-weight: 400;">$<?=$price;?></span>
+                <span style="font-size: 170px;font-weight: 400;">$<?=$quote['price_per_franchise'];?></span>
                 <span style="">Inc GST</span>
             </td>
         </tr>
         <tr>
             <td>per month | per franchise</td>
         </tr>
+        <tr><td style="font-size:14px; font-weight:100;"><?=$quote['comment'];?></td></tr>
         <tr><td style="border-bottom:1px dotted #ccc;">&nbsp;</td></tr>
     </tbody>
     

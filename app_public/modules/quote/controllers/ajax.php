@@ -11,45 +11,8 @@ class Ajax extends MX_Controller {
 	{
 		$input = $this->input->post();
 		
-		# default values
-		$no_of_site = 1;
+		$data['quote'] = modules::run('quote/generate_quote',$input);
 		
-		$avg_staff = $input['avg_staff'];
-
-		
-		switch($input['package']){
-			case 'software-only':
-				$cost = 4;
-			break;
-			
-			case 'sofware-and-payroll':
-				$cost = 6;
-			break;
-			
-			default:
-				$cost = 4;
-			break;	
-		}
-	
-		if(($input['no_of_sites'])){
-			$no_of_site = $input['no_of_sites'];	
-		}
-		
-		# price
-		$price = $cost * $avg_staff;
-		
-		# discount
-		if($no_of_site > 10){
-			$discount = $price * 0.10;
-		}else if($no_of_site > 25){
-			$discount = $price * 0.25;	
-		}else{
-			$discount = 0;
-		}
-		
-		# get final price
-		$final_price = $price - $discount;
-		$data['price'] = number_format($final_price,2);
 		$data['input'] = $input;
 		$data['quote_id'] = time();
 		
@@ -69,7 +32,7 @@ class Ajax extends MX_Controller {
 					'subject' => 'StaffBooks | ShoeBooks - Quote ' . $data['quote_id'],
 					'message' => $email_msg
 					);
-		modules::run('email/send_email',$email_data);
+		# modules::run('email/send_email',$email_data);
 		
 		
 		echo $quote;
