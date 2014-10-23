@@ -24,6 +24,7 @@
         <tr>
             <td>per month | per franchise</td>
         </tr>
+        <tr><td style="font-size:14px; font-weight:600;"><?=$quote['package'];?></td></tr>
         <tr><td style="font-size:14px; font-weight:100;"><?=$quote['comment'];?></td></tr>
         <tr><td>&nbsp;</td></tr>
     </tbody>
@@ -32,8 +33,8 @@
         <tr><td>&nbsp;</td></tr>
         <tr>
             <td>
-                The quote provided is an estimate only and to provide a formal finalised quote requires <br>
-                Discussion into your exact payroll process requirements
+               Costing based on the estimate of<br>
+               <b><?=$input['no_of_sites'];?> franchise</b> locations with <b><?=$input['avg_staff'];?> staff</b> per location
             </td>
         </tr>
         <tr><td>&nbsp;</td></tr>

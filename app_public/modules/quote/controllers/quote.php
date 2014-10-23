@@ -72,10 +72,12 @@ class Quote extends MX_Controller {
 		switch($params['package']){
 			case 'software-only':
 				$price = $pricing['price_staffbooks']+$pricing['price_shoebooks'];
+				$package = 'software and you process your payrole';
 			break;
 			
 			case 'sofware-and-payroll':
 				$price = $pricing['price_staffbooks']+$pricing['price_shoebooks']+$pricing['payroll_processing'];
+				$package = 'software and we process your payrole';
 			break;	
 		}
 		
@@ -85,7 +87,8 @@ class Quote extends MX_Controller {
 		$quote = array(
 						'total_price' => number_format($total_price,2),
 						'price_per_franchise' => number_format($price_per_franchise,2),
-						'comment' => $pricing['comment']
+						'comment' => $pricing['comment'],
+						'package' => $package
 					);
 		return $quote;		
 	}
