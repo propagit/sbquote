@@ -95,10 +95,20 @@ class Quote extends MX_Controller {
 	
 	function result()
 	{
-		$data['price'] = number_format(72,2);
-		$data['input'] = array('name' => 'James Blunfield' , 'phone' => '0421-333-367', 'email' => 'james@example.com');
+
+		$dummy_input = array(
+							'name' => 'James Blunfield' , 
+							'phone' => '0421-333-367', 
+							'email' => 'james@example.com',
+							'no_of_sites' => 6, 
+							'avg_staff' => 5,
+							'package' => 'sofware-and-payroll'
+						);
 		$data['quote_id'] = time();
-	
+		
+		$data['quote'] = $this->generate_quote($dummy_input);
+		$data['input'] = $dummy_input;
+		
 		$this->load->view('quote_result_template', isset($data) ? $data : NULL);	
 	}
 	
