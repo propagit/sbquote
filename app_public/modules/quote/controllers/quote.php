@@ -47,7 +47,7 @@ class Quote extends MX_Controller {
 									'price_shoebooks' => 3,
 									'payroll_processing' => 5.5,
 									'discount' => true,
-									'comment' => 'Your are eligible for massive discount, please contact us for a formal quote request.'
+									'comment' => 'You\'re eligible for a volume discount price, speak to us about getting a formal quote!'
 								),
 						);
 		
