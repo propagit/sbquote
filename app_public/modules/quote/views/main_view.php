@@ -7,7 +7,7 @@
                 	<div class="icon-bg first-bg no-float"><i class="fa fa-desktop"></i></div>
                 </div>
                 <h1 class="alt">The Software & <span>You</span> <br>Run Your Payroll</h1>
-                <div class="btn-group radio-btn group1" data-package="software-only">
+                <div class="btn-group radio-btn group1" data-package="software-only" id="default-radio">
                   <button type="button" class="btn btn-default btn-success yes">Yes</button>
                   <button type="button" class="btn btn-default no">No</button>
                 </div>
