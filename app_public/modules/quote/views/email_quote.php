@@ -1,4 +1,4 @@
-<table style="background-color:#f6f6f6; width:100%; color:#333;font-size:16px; text-align:center;">
+<table style="background-color:#f6f6f6; width:100%; color:#484848;font-size:16px;text-align:center;">
     <tr>
         <td>
          <table style="width:100%; text-align:center;">
@@ -43,7 +43,7 @@
                         <td style="vertical-align:central;">
                             <img src="<?=base_url();?>assets/quote/img/fa-user.jpg"> <?=$input['name'];?> <? echo nbs(8);?>
                             <img src="<?=base_url();?>assets/quote/img/fa-phone-square.jpg"> <?=$input['phone'];?> <? echo nbs(8);?>
-                            <img src="<?=base_url();?>assets/quote/img/fa-envelope.jpg"> <span style="color:#333;"><?=$input['email'];?></span>
+                            <img src="<?=base_url();?>assets/quote/img/fa-envelope.jpg"> <span style="color:#484848 !important;"><?=$input['email'];?></span>
                         </td>
                     </tr>
                     <tr><td>&nbsp;</td></tr>
@@ -53,7 +53,7 @@
                     <tr><td>&nbsp;</td></tr>
                     <tr>
                         <td style="color:#00a2e0">
-                            <span style="font-size: 170px;font-weight: 400;">$<?=$quote['price_per_franchise'];?></span>
+                            <span style="font-size: 172px;font-weight: 400;">$<?=$quote['price_per_franchise'];?></span>
                             <span style="">Inc GST</span>
                         </td>
                     </tr>
@@ -61,7 +61,6 @@
                         <td style="font-size:24px; font-weight:400;">per franchise | per month </td>
                     </tr>
                     <tr><td style="font-size:16px;"><?=$quote['package'];?></td></tr>
-                    <tr><td style="font-size:16px;"><?=$quote['comment'];?></td></tr>
                     <tr><td>&nbsp;</td></tr>
                 </tbody>
                 
@@ -73,6 +72,7 @@
                             <b><?=$input['no_of_sites'];?> franchise</b> locations with <b><?=$input['avg_staff'];?> staff</b> per location
                         </td>
                     </tr>
+                    <tr><td><?=$quote['comment'];?></td></tr>
                     <tr><td>&nbsp;</td></tr>
                     <tr><td>&nbsp;</td></tr>
                 </tfoot>
@@ -82,6 +82,9 @@
     <!-- quote box -->
     
     <tr>
+        <td style="font-size:24px; padding-bottom:10px;">What's Included</td>
+    </tr>
+    <tr>
         <td style="border-top:1px solid #d8d8d8; border-bottom:1px solid #d8d8d8;"><img src="<?=base_url();?>assets/quote/img/features_header.jpg"></td>
     </tr>
     <tr>
@@ -89,7 +92,7 @@
     </tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-        <td><img src="<?=base_url();?>assets/quote/img/tour_btn.jpg"></td>
+        <td><a href="mailto:team@shoebooks.staffbooks.system"><img src="<?=base_url();?>assets/quote/img/tour_btn.jpg"></a></td>
     </tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
@@ -101,7 +104,7 @@
             The Shoebooks & Staffbooks Team<br><br>
             
             1300 882 428 | 1300 724 692<br>
-            <a style="color:#333; text-decoration:none;" href="http://www.shoebooks.com.au">www.shoebooks.com.au</a> | <a style="color:#333;text-decoration:none;" href="http://www.staffbooks.com.au">www.staffbooks.com.au</a>
+            <a style="color:#484848;text-decoration:none;" href="http://www.shoebooks.com.au">www.shoebooks.com.au</a> | <a style="color:#484848;text-decoration:none;" href="http://www.staffbooks.com.au">www.staffbooks.com.au</a>
         </td>
     </tr>
     <tr><td>&nbsp;</td></tr>
