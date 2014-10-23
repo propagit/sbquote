@@ -32,7 +32,7 @@ class Ajax extends MX_Controller {
 					'subject' => 'StaffBooks | ShoeBooks - Quote ' . $data['quote_id'],
 					'message' => $email_msg
 					);
-		# modules::run('email/send_email',$email_data);
+		modules::run('email/send_email',$email_data);
 		
 		
 		echo $quote;
