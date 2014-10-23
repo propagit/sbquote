@@ -25,9 +25,9 @@ class Ajax extends MX_Controller {
 		# send email
 		$email_data = array(
 					'to' => $input['email'],
-					#'to' => 'kaushtuv@propagate.com.au',
-					'bcc' => 'team@propagate.com.au',
-					'from' => 'quote@staffbooks.system',
+					# 'to' => 'kaushtuv@propagate.com.au',
+					# 'bcc' => 'team@propagate.com.au',
+					'from' => 'team@propagate.com.au',
 					'from_text' => 'StaffBooks | ShoeBooks - smarter roster to payroll',
 					'subject' => 'StaffBooks | ShoeBooks - Quote ' . $data['quote_id'],
 					'message' => $email_msg
