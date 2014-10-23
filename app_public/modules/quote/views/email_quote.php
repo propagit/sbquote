@@ -1,7 +1,7 @@
 <table style="background-color:#f6f6f6; width:100%; color:#484848;font-size:16px;text-align:center;">
     <tr>
         <td>
-         <table style="width:100%; text-align:center;">
+         <table style="width:100%; text-align:center;color:#484848;">
             <thead>
                 <tr>
                     <td style="padding:40px 0 20px 0;">
@@ -31,7 +31,7 @@
     <!-- quote box -->
     <tr>
         <td style="padding-left:15px; padding-right:15px;">
-            <table style="width:100%; font-family:Arial, sans-serif; border:1px solid #f0f0f0; text-align:center; vertical-align:central; background-color:#fff;font-size:16px; margin-bottom:20px;">
+            <table style="width:100%; font-family:Arial, sans-serif; border:1px solid #f0f0f0; text-align:center; vertical-align:central; background-color:#fff;font-size:16px; margin-bottom:20px;color:#484848;">
 
                 <thead style="font-weight:100; font-size:14px;">
                     <tr><td>&nbsp;</td></tr>
