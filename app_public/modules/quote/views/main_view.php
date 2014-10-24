@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                     <h1>Tell Us About Your Franchise</h1>
-                    <span class="display-block"><span class="imp">You</span> do your roster & <span class="imp">We</span> do yourpay run</span>
+                    <span class="display-block"><span class="imp">You</span> do your roster & <span class="imp">We</span> do your pay run</span>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
               <input id="avg-staff" name="avg_staff" type="text" class="form-control" placeholder="Enter The Average Number Of Staff Per Organisation">
             </div>
             <div class="form-group">
-              <input id="no-of-sites" name="no_of_sites" type="text" class="form-control" placeholder="Enter The Number Of Sites">
+              <input id="no-of-sites" name="no_of_sites" type="text" class="form-control" placeholder="Enter The Number Of Franchise">
             </div>
         </div>
     </div>

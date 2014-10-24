@@ -72,12 +72,12 @@ class Quote extends MX_Controller {
 		switch($params['package']){
 			case 'software-only':
 				$price = $pricing['price_staffbooks']+$pricing['price_shoebooks'];
-				$package = 'software and you process your payrole';
+				$package = 'software and you process your payroll';
 			break;
 			
 			case 'sofware-and-payroll':
 				$price = $pricing['price_staffbooks']+$pricing['price_shoebooks']+$pricing['payroll_processing'];
-				$package = 'software and we process your payrole';
+				$package = 'software and we process your payroll';
 			break;	
 		}
 		

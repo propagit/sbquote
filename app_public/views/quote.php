@@ -27,7 +27,7 @@
                 <img class="logo" src="<?=base_url();?>assets/quote/img/shoebooks-logo.png" title="ShoeBooks Logo">
             </div>
             <div class="col-xs-12 slogan">
-                <h2><em>smater - roster to payroll</em></h2>
+                <h2><em>smarter - roster to payroll</em></h2>
                 <p><em>Pricing - Quick Quote</em></p>
             </div>
         </div>
