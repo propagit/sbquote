@@ -20,10 +20,10 @@
 <div id="header-wrap">
     <div class="box">
         <div class="container">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <img class="logo" src="<?=base_url();?>assets/quote/img/staffbooks-logo.png" title="StaffBooks Logo">
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <img class="logo" src="<?=base_url();?>assets/quote/img/shoebooks-logo.png" title="ShoeBooks Logo">
             </div>
             <div class="col-xs-12 slogan">
